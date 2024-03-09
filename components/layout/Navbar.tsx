@@ -1,6 +1,7 @@
 "use client"; import React, { useState, useEffect } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/ui/navbarMenu";
 import { cn } from "@/util/cn";
+import { socialLinks } from "@/constants/socialLinks";
 
 interface NavbarProps {
     className?: string;
@@ -27,6 +28,7 @@ export function Navbar() {
 
     return (
         <div className="relative w-full flex items-center  justify-center">
+            {/*Show navbar when showNavbar becomes true*/}
             {showNavbar && <NavbarDemo className="top-0 " />}
         </div>
     );
@@ -48,7 +50,6 @@ export function NavbarDemo({ className }: NavbarProps) {
                 </MenuItem>
                 <MenuItem setActive={setActive} active={active} item="Blogs">
                     <div className="  text-sm grid grid-cols-auto gap-10 p-4">
-
                         <ProductItem
                             title="command-line tool using TypeScript"
                             href="https://codecshivam.hashnode.dev/command-line-tool-using-typescript"
@@ -59,10 +60,10 @@ export function NavbarDemo({ className }: NavbarProps) {
                 </MenuItem>
                 <MenuItem setActive={setActive} active={active} item="Social">
                     <div className="flex flex-col space-y-4 text-sm">
-                        <HoveredLink href="https://twitter.com/codecShivam">Twitter</HoveredLink>
-                        <HoveredLink href="https://linkedin.com/in/codecShivam">LinkedIn</HoveredLink>
-                        <HoveredLink href="https://github.com/codecShivam">Github</HoveredLink>
-                        <HoveredLink href="https://hashnode.com/@codecshivam">Hashnode</HoveredLink>
+                        <HoveredLink href={socialLinks.twitter}>Twitter</HoveredLink>
+                        <HoveredLink href={socialLinks.linkedin}>LinkedIn</HoveredLink>
+                        <HoveredLink href={socialLinks.github}>Github</HoveredLink>
+                        <HoveredLink href={socialLinks.hashnode}>Hashnode</HoveredLink>
                     </div>
                 </MenuItem>
             </Menu>

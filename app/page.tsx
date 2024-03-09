@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { BackgroundGradientAnimation } from "@/components/ui/backgroundAnimation";
 import { SparklesCore } from "@/components/ui/sparkles";
+import Timeline from "@/components/layout/Timeline";
 
 export default function Home() {
   return (
@@ -14,11 +15,11 @@ export default function Home() {
           </div>
         </div>
       </BackgroundGradientAnimation>
-      <div className="h-screen bg-black">
+      <div className="bg-black">
         <div className=" w-screen flex flex-col items-center justify-center overflow-hidden rounded-md">
           <div className="w-screen h-40 relative">
             {/* Gradients */}
-           
+
             {/* Core component */}
             <SparklesCore
               background="transparent"
@@ -31,9 +32,10 @@ export default function Home() {
 
             {/* Radial Gradient to prevent sharp edges */}
             <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
-          </div></div>
+          </div>
+        </div>
+        <Timeline />
       </div>
-
     </div>
   );
 }
