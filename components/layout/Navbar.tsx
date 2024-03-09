@@ -13,7 +13,7 @@ export function Navbar() {
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
-            setShowNavbar(scrollPosition > screen.height );
+            setShowNavbar(scrollPosition > screen.height / 2);
         };
 
         window.addEventListener("scroll", handleScroll);
@@ -38,18 +38,18 @@ export function NavbarDemo({ className }: NavbarProps) {
     return (
         <div className={cn("fixed inset-x-0  max-w-2xl mx-auto z-50", className)}>
             <Menu setActive={setActive}>
-                <MenuItem setActive={setActive} active={active} item="Services">
+                <MenuItem setActive={setActive} active={active} item="Sections">
                     <div className="flex flex-col space-y-4 text-sm">
-                        <HoveredLink href="/web-dev">Web Development</HoveredLink>
-                        <HoveredLink href="/interface-design">Interface Design</HoveredLink>
-                        <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
-                        <HoveredLink href="/branding">Branding</HoveredLink>
+                        <HoveredLink href="/web-dev">About</HoveredLink>
+                        <HoveredLink href="/interface-design">Projects</HoveredLink>
+                        <HoveredLink href="/seo">Open Source Contributions</HoveredLink>
+                        <HoveredLink href="/branding">Contact</HoveredLink>
                     </div>
                 </MenuItem>
-                <MenuItem setActive={setActive} active={active} item="Products">
+                <MenuItem setActive={setActive} active={active} item="Blogs">
                     <div className="  text-sm grid grid-cols-auto gap-10 p-4">
-                       
-                         <ProductItem
+
+                        <ProductItem
                             title="command-line tool using TypeScript"
                             href="https://codecshivam.hashnode.dev/command-line-tool-using-typescript"
                             src="/images/TSDiffTool.jpg"
@@ -57,12 +57,12 @@ export function NavbarDemo({ className }: NavbarProps) {
                         />
                     </div>
                 </MenuItem>
-                <MenuItem setActive={setActive} active={active} item="Pricing">
+                <MenuItem setActive={setActive} active={active} item="Social">
                     <div className="flex flex-col space-y-4 text-sm">
-                        <HoveredLink href="/hobby">Hobby</HoveredLink>
-                        <HoveredLink href="/individual">Individual</HoveredLink>
-                        <HoveredLink href="/team">Team</HoveredLink>
-                        <HoveredLink href="/enterprise">Enterprise</HoveredLink>
+                        <HoveredLink href="https://twitter.com/codecShivam">Twitter</HoveredLink>
+                        <HoveredLink href="https://linkedin.com/in/codecShivam">LinkedIn</HoveredLink>
+                        <HoveredLink href="https://github.com/codecShivam">Github</HoveredLink>
+                        <HoveredLink href="https://hashnode.com/@codecshivam">Hashnode</HoveredLink>
                     </div>
                 </MenuItem>
             </Menu>
