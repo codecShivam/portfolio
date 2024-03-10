@@ -2,6 +2,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { BackgroundGradientAnimation } from "@/components/ui/backgroundAnimation";
 import { SparklesCore } from "@/components/ui/sparkles";
 import Timeline from "@/components/layout/Timeline";
+import MyComponent from "@/pages/api/pullRequest";
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
         </div>
         <Timeline />
       </div>
+      <MyComponent />
     </div>
   );
 }
